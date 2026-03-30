@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jose Rodriguez OPEN Restaurant Reservation System</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css">
+    <style>
+      html {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+        background: #1a1a1a;
+        color: #2b2e3e;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        background: #1a1a1a;
+        color: #2b2e3e;
+      }
+
+      /* Dark theme customization */
+      .swagger-ui {
+        background: #1a1a1a;
+      }
+
+      .swagger-ui .topbar {
+        background-color: #0d47a1;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+      }
+
+      .swagger-ui .info .title {
+        color: #5a8cc0;
+      }
+
+      .swagger-ui .info {
+        margin: 50px 0;
+      }
+
+      .swagger-ui .info .description {
+        color: #a0a0a0;
+      }
+
+      .swagger-ui .scheme-container {
+        background: #252525;
+        border: 1px solid #5a8cc0;
+        border-radius: 4px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .swagger-ui .btn {
+        background: #0d47a1;
+        border: 1px solid #5a8cc0;
+        color: #e0e0e0;
+      }
+
+      .swagger-ui .btn:hover {
+        background: #1565c0;
+        border-color: #90caf9;
+      }
+
+      .swagger-ui .model-box {
+        background: #252525;
+        border: 1px solid #5a8cc0;
+      }
+
+      .swagger-ui .opblock {
+        background: #242424;
+        border: 1px solid #5a8cc0;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+
+      .swagger-ui .opblock.opblock-get {
+        background: rgba(13, 71, 161, 0.1);
+        border-color: #5a8cc0;
+      }
+
+      .swagger-ui .opblock.opblock-post {
+        background: rgba(56, 142, 60, 0.1);
+        border-color: #5a8cc0;
+      }
+
+      .swagger-ui .opblock.opblock-put {
+        background: rgba(245, 127, 23, 0.1);
+        border-color: #5a8cc0;
+      }
+
+      .swagger-ui .opblock.opblock-delete {
+        background: rgba(211, 47, 47, 0.1);
+        border-color: #5a8cc0;
+      }
+
+      .swagger-ui .opblock.opblock-patch {
+        background: rgba(123, 31, 162, 0.1);
+        border-color: #5a8cc0;
+      }
+
+      .swagger-ui .opblock-summary {
+        color: #e0e0e0;
+        border-bottom: 1px solid #5a8cc0;
+      }
+
+      .swagger-ui input[type="text"],
+      .swagger-ui input[type="password"],
+      .swagger-ui input[type="email"],
+      .swagger-ui textarea,
+      .swagger-ui select {
+        background: #333333;
+        border: 1px solid #5a8cc0;
+        color: #e0e0e0;
+        border-radius: 4px;
+        padding: 8px 12px;
+      }
+
+      .swagger-ui input[type="text"]:focus,
+      .swagger-ui input[type="password"]:focus,
+      .swagger-ui input[type="email"]:focus,
+      .swagger-ui textarea:focus,
+      .swagger-ui select:focus {
+        background: #3a3a3a;
+        border-color: #90caf9;
+        box-shadow: 0 0 0 3px rgba(90, 140, 192, 0.2);
+        outline: none;
+      }
+
+      .swagger-ui .response-col_status {
+        color: #e0e0e0;
+      }
+
+      .swagger-ui a {
+        color: #5a8cc0;
+      }
+
+      .swagger-ui a:hover {
+        color: #90caf9;
+      }
+
+      .swagger-ui .markdown p,
+      .swagger-ui .markdown h1,
+      .swagger-ui .markdown h2,
+      .swagger-ui .markdown h3,
+      .swagger-ui .markdown h4,
+      .swagger-ui .markdown h5,
+      .swagger-ui .markdown h6 {
+        color: #e0e0e0;
+      }
+
+      .swagger-ui code {
+        background: #2a2a2a;
+        color: #90caf9;
+        border-radius: 3px;
+        padding: 2px 6px;
+      }
+
+      .swagger-ui .loading-container {
+        color: #5a8cc0;
+      }
+
+      .swagger-ui .model-title {
+        color: #5a8cc0;
+      }
+
+      /* Header styling */
+      .swagger-ui .topbar h1 {
+        color: #ffffff;
+        font-size: 24px;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="swagger-ui"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
+    <script>
+    window.onload = function() {
+      // Build a system
+      const ui = SwaggerUIBundle({
+        url: location.origin + "/openapi.json",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout",
+        defaultModelsExpandDepth: 1,
+        defaultModelExpandDepth: 1,
+      })
+      window.ui = ui
+    }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - ENVIRONMENT=production
+      - DATABASE_URL=sqlite+aiosqlite:///./reservation_system.db
+      - API_KEY=${API_KEY:-dev-api-key-change-in-production}
+    volumes:
+      - ./:/app
+      - ./reservation_system.db:/app/reservation_system.db
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  # Optional: PostgreSQL service for production
+  # postgres:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: reservation_user
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD}
+  #     POSTGRES_DB: reservation_system
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:

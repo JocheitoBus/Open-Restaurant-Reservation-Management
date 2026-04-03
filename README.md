@@ -12,7 +12,6 @@ Production-ready API for managing restaurant table reservations with FastAPI, SQ
 
 **1. Install dependencies:**
 ```bash
-cd "c:\Users\Jose\Desktop\Jose\Proyectos\Reservation management"
 python -m venv venv
 .\venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
